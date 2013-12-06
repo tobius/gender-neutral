@@ -32,18 +32,18 @@ gender.neutralize(text, function(err, neutral){
 Each filter replaces references to nominative subjects, oblique objects,
 possessive determiners, possessive pronouns, and reflexives.
 
-filter      | nominative subject    | oblique object    | possessive determiner | possessive pronoun    | reflexive
----         | ---                   | ---               | ---                   | ---                   | ---
-__they__    | they  | them  | their | theirs    | themself
-__e__       | e     | em    | eir   | eirs      | eirself
-__ey__      | ey    | em    | eir   | eirs      | emself
-__tho__     | tho   | thor  | thors | thor      | thongself
-__hu__      | hu    | hum   | hus   | hus       | humself
-__per__     | per   | per   | per   | pers      | perself
-__thon__    | thon  | thon  | thons | thons     | thonself
-__jee__     | jee   | jem   | jeir  | jeirs     | jemself
-__ve__      | ve    | ver   | vis   | vis       | verself
-__xe__      | xe    | xem   | xyr   | xyrs      | xemself
-__ze__      | ze    | mer   | zer   | zers      | zemself
-__zhe__     | zhe   | zhim  | zher  | zhers     | zhimself
+key         | subject   | object    | determiner    | pronoun   | reflexive
+---         | ---       | ---       | ---           | ---       | ---
+__they__    | they      | them      | their         | theirs    | themself
+__e__       | e         | em        | eir           | eirs      | eirself
+__ey__      | ey        | em        | eir           | eirs      | emself
+__tho__     | tho       | thor      | thors         | thor      | thongself
+__hu__      | hu        | hum       | hus           | hus       | humself
+__per__     | per       | per       | per           | pers      | perself
+__thon__    | thon      | thon      | thons         | thons     | thonself
+__jee__     | jee       | jem       | jeir          | jeirs     | jemself
+__ve__      | ve        | ver       | vis           | vis       | verself
+__xe__      | xe        | xem       | xyr           | xyrs      | xemself
+__ze__      | ze        | mer       | zer           | zers      | zemself
+__zhe__     | zhe       | zhim      | zher          | zhers     | zhimself
 
