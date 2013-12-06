@@ -16,7 +16,7 @@ A node module that neutralizes gender specific text.
 var gender = require('gender-neutral');
 
 // gender specific content
-var text = 'I called him on Wednesday to tell him that she laughed at the singing Teddy Bear that he got her. Her eyes were overfilled with joy everytime it said "That is her! That is my new friend!". She really seems to like herself today.';
+var text = 'I called him on Wednesday to tell him the good news.';
 
 // neutralize content
 gender.neutralize(text, function(err, neutral){
