@@ -32,7 +32,7 @@ gender.neutralize(text, function(err, neutral){
 Each filter replaces references to nominative subjects, oblique objects,
 possessive determiners, possessive pronouns, and reflexives.
 
-&nbsp;      | "he" laughed | I called "him" | "His eyes gleam | That is "his" | He likes "himself"
+&nbsp;      | "he" laughed | I called "him" | "His" eyes gleam | That is "his" | He likes "himself"
 ---         | ---       | ---       | ---           | ---       | ---
 __they__    | they      | them      | their         | theirs    | themself
 __e__       | e         | em        | eir           | eirs      | eirself
