@@ -6,7 +6,7 @@ A node module that neutralizes gender specific text.
 ## Install
 
 ```shell
-npm install git://github.com/tobius/gender-neutral.git
+[~] npm install git://github.com/tobius/gender-neutral.git
 ```
 
 ## Usage
