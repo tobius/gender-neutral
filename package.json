@@ -1,0 +1,25 @@
+{
+  "name": "gender-neutral",
+  "version": "0.1.0",
+  "description": "Create gender neutral versions of text-based sources",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "request": "~2.28.0",
+    "async": "~0.2.9",
+    "natural": "~0.1.25",
+    "WNdb": "~3.0.1"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1"
+  }
+}
