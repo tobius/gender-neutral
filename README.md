@@ -18,13 +18,8 @@ var gender = require('gender-neutral');
 // gender specific content
 var text = 'I called him on Wednesday to tell him the good news.';
 
-// neutralize content
-gender.neutralize(text, function(err, neutral){
-    if (err) throw err;
-    else console.log(neutral);
-    // outputs:
-    // I called them on Wednesday to tell them the good news.';
-});
+// I called them on Wednesday to tell them the good news.';
+gender.neutralize(text, console.log);
 ```
 
 ## Supported Filters
