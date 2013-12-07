@@ -63,8 +63,8 @@ describe('require("gender-neutral")', function(){
     describe('gender.neutralize(text, callback, [type])', function(){
         it('should return neutralized text for gender specific statements', function(done){
             var text = 'I called him on Wednesday to tell him that she laughed at the singing Teddy Bear that he got her. Her eyes were overfilled with joy everytime it said "That is her! That is my new friend!". She really seems to like herself today.';
-            gender.neutralizeReflexives(text, function(err, neutral){
-                assert(neutral === 'I called them on Wednesday to tell them that they laughed at the singing Teddy Bear that they got her. Their eyes were overfilled with joy everytime it said "That is them! That is my new friend!". They really seemed to like themself today.', neutral);
+            gender.neutralize(text, function(err, neutral){
+                assert(neutral === 'I called them on Wednesday to tell them that they laughed at the singing Teddy Bear that they got them. Their eyes were overfilled with joy everytime it said "That is them! That is my new friend!". They really seemed to like themself today.', neutral);
                 done();
             }, 'they');
         });
