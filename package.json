@@ -16,13 +16,14 @@
   "author": "Toby Miller <tobius.miller@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "underscore": "~1.5.2",
-    "request": "~2.28.0",
-    "async": "~0.2.9",
-    "natural": "~0.1.25",
-    "WNdb": "~3.0.1"
+    "underscore": "*",
+    "request": "*",
+    "async": "*",
+    "natural": "*",
+    "WNdb": "*"
   },
   "devDependencies": {
-    "chai": "~1.8.1"
+    "chai": "*",
+    "mocha": "^2.3.3"
   }
 }
