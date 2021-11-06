@@ -1,7 +1,8 @@
 // modules
 const async = require('async');
 
-var gender = module.exports = {
+// object
+const gender = {
   /**
    * specific gender neutral patterns
    *
@@ -9,11 +10,11 @@ var gender = module.exports = {
    * @name patterns
    */
   patterns: {
-    nominativeSubject    : /\b(he|she)\b/gi,
-    obliqueObject        : /\b(him|her)\b/gi,
-    possessiveDeterminer : /\b(his|her)\b/gi,
-    possessivePronoun    : /\b(his|hers)\b/gi,
-    reflexive            : /\b(himself|herself)\b/gi
+    nominativeSubject: /\b(he|she)\b/gi,
+    obliqueObject: /\b(him|her)\b/gi,
+    possessiveDeterminer: /\b(his|her)\b/gi,
+    possessivePronoun: /\b(his|hers)\b/gi,
+    reflexive: /\b(himself|herself)\b/gi,
   },
 
   /**
@@ -23,90 +24,90 @@ var gender = module.exports = {
    * @name filters
    */
   filters: {
-    they: {
-      nominativeSubject    : 'they',
-      obliqueObject        : 'them',
-      possessiveDeterminer : 'their',
-      possessivePronoun    : 'theirs',
-      reflexive            : 'themself'
-    },
     e: {
-      nominativeSubject    : 'e',
-      obliqueObject        : 'em',
-      possessiveDeterminer : 'eir',
-      possessivePronoun    : 'eirs',
-      reflexive            : 'eirself'
+      nominativeSubject: 'e',
+      obliqueObject: 'em',
+      possessiveDeterminer: 'eir',
+      possessivePronoun: 'eirs',
+      reflexive: 'eirself',
     },
     ey: {
-      nominativeSubject    : 'ey',
-      obliqueObject        : 'em',
-      possessiveDeterminer : 'eir',
-      possessivePronoun    : 'eirs',
-      reflexive            : 'emself'
-    },
-    tho: {
-      nominativeSubject    : 'tho',
-      obliqueObject        : 'thor',
-      possessiveDeterminer : 'thors',
-      possessivePronoun    : 'thor',
-      reflexive            : 'thongself'
+      nominativeSubject: 'ey',
+      obliqueObject: 'em',
+      possessiveDeterminer: 'eir',
+      possessivePronoun: 'eirs',
+      reflexive: 'emself',
     },
     hu: {
-      nominativeSubject    : 'hu',
-      obliqueObject        : 'hum',
-      possessiveDeterminer : 'hus',
-      possessivePronoun    : 'hus',
-      reflexive            : 'humself'
-    },
-    per: {
-      nominativeSubject    : 'per',
-      obliqueObject        : 'per',
-      possessiveDeterminer : 'per',
-      possessivePronoun    : 'pers',
-      reflexive            : 'perself'
-    },
-    thon: {
-      nominativeSubject    : 'thon',
-      obliqueObject        : 'thon',
-      possessiveDeterminer : 'thons',
-      possessivePronoun    : 'thons',
-      reflexive            : 'thonself'
+      nominativeSubject: 'hu',
+      obliqueObject: 'hum',
+      possessiveDeterminer: 'hus',
+      possessivePronoun: 'hus',
+      reflexive: 'humself',
     },
     jee: {
-      nominativeSubject    : 'jee',
-      obliqueObject        : 'jem',
-      possessiveDeterminer : 'jeir',
-      possessivePronoun    : 'jeirs',
-      reflexive            : 'jemself'
+      nominativeSubject: 'jee',
+      obliqueObject: 'jem',
+      possessiveDeterminer: 'jeir',
+      possessivePronoun: 'jeirs',
+      reflexive: 'jemself',
+    },
+    per: {
+      nominativeSubject: 'per',
+      obliqueObject: 'per',
+      possessiveDeterminer: 'per',
+      possessivePronoun: 'pers',
+      reflexive: 'perself',
+    },
+    they: {
+      nominativeSubject: 'they',
+      obliqueObject: 'them',
+      possessiveDeterminer: 'their',
+      possessivePronoun: 'theirs',
+      reflexive: 'themself',
+    },
+    tho: {
+      nominativeSubject: 'tho',
+      obliqueObject: 'thor',
+      possessiveDeterminer: 'thors',
+      possessivePronoun: 'thor',
+      reflexive: 'thongself',
+    },
+    thon: {
+      nominativeSubject: 'thon',
+      obliqueObject: 'thon',
+      possessiveDeterminer: 'thons',
+      possessivePronoun: 'thons',
+      reflexive: 'thonself',
     },
     ve: {
-      nominativeSubject    : 've',
-      obliqueObject        : 'ver',
-      possessiveDeterminer : 'vis',
-      possessivePronoun    : 'vis',
-      reflexive            : 'verself'
+      nominativeSubject: 've',
+      obliqueObject: 'ver',
+      possessiveDeterminer: 'vis',
+      possessivePronoun: 'vis',
+      reflexive: 'verself',
     },
     xe: {
-      nominativeSubject    : 'xe',
-      obliqueObject        : 'xem',
-      possessiveDeterminer : 'xyr',
-      possessivePronoun    : 'xyrs',
-      reflexive            : 'xemself'
+      nominativeSubject: 'xe',
+      obliqueObject: 'xem',
+      possessiveDeterminer: 'xyr',
+      possessivePronoun: 'xyrs',
+      reflexive: 'xemself',
     },
     ze: {
-      nominativeSubject    : 'ze',
-      obliqueObject        : 'mer',
-      possessiveDeterminer : 'zer',
-      possessivePronoun    : 'zers',
-      reflexive            : 'zemself'
+      nominativeSubject: 'ze',
+      obliqueObject: 'mer',
+      possessiveDeterminer: 'zer',
+      possessivePronoun: 'zers',
+      reflexive: 'zemself',
     },
     zhe: {
-      nominativeSubject    : 'zhe',
-      obliqueObject        : 'zhim',
-      possessiveDeterminer : 'zher',
-      possessivePronoun    : 'zhers',
-      reflexive            : 'zhimself'
-    }
+      nominativeSubject: 'zhe',
+      obliqueObject: 'zhim',
+      possessiveDeterminer: 'zher',
+      possessivePronoun: 'zhers',
+      reflexive: 'zhimself',
+    },
   },
 
   /**
@@ -116,14 +117,13 @@ var gender = module.exports = {
    * @param {RegExp} find
    * @param {String} replace
    */
-  safeReplace: function(text, find, replace){
-    text = text.replace(find, function(match, specific){
-      if (/[A-Z]/.test(specific.substring(0, 1))){
+  safeReplace(text, find, replace) {
+    return text.replace(find, (match, specific) => {
+      if (/[A-Z]/.test(specific.substring(0, 1))) {
         return replace.charAt(0).toUpperCase() + replace.substring(1);
       }
       return replace;
     });
-    return text;
   },
 
   /**
@@ -135,21 +135,22 @@ var gender = module.exports = {
    * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizeNominativeSubjects: function(text, callback){
-    var filter, past, present;
-
-    // terms
-    filter = (arguments > 2 && filters[arguments[2]] !== undefined) ? arguments[2] : 'they';
-    text = this.safeReplace(text, this.patterns.nominativeSubject, this.filters[filter].nominativeSubject);
+  neutralizeNominativeSubjects(text, callback, filter = 'they') {
+    let neutralText = this.safeReplace(
+      text,
+      this.patterns.nominativeSubject,
+      this.filters[filter].nominativeSubject,
+    );
 
     // tense
-    past = new RegExp('\\b(' + this.filters[filter].nominativeSubject + ') +was\\b', 'i');
-    present = new RegExp('\\b(' + this.filters[filter].nominativeSubject + ') +is\\b', 'i');
-    text = text.replace(past, '$1 were');
-    text = text.replace(present, '$1 are');
+    // @todo doesn't this logic belong in the possessive test?
+    const past = new RegExp(`\\b(${this.filters[filter].nominativeSubject}) +was\\b`, 'i');
+    const present = new RegExp(`\\b(${this.filters[filter].nominativeSubject}) +is\\b`, 'i');
+    neutralText = this.safeReplace(neutralText, past, '$1 were');
+    neutralText = this.safeReplace(neutralText, present, '$1 are');
 
     // finish
-    callback(undefined, text);
+    callback(undefined, neutralText);
   },
 
   /**
@@ -161,15 +162,12 @@ var gender = module.exports = {
    * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizeObliqueObjects: function(text, callback){
-    var filter;
-
-    // terms
-    filter = (arguments > 2 && filters[arguments[2]] !== undefined) ? arguments[2] : 'they';
-    text = this.safeReplace(text, this.patterns.obliqueObject, this.filters[filter].obliqueObject);
-
-    // finish
-    callback(undefined, text);
+  neutralizeObliqueObjects(text, callback, filter = 'they') {
+    callback(undefined, this.safeReplace(
+      text,
+      this.patterns.obliqueObject,
+      this.filters[filter].obliqueObject,
+    ));
   },
 
   /**
@@ -181,15 +179,12 @@ var gender = module.exports = {
    * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizePossessiveDeterminers: function(text, callback){
-    var filter;
-
-    // terms
-    filter = (arguments > 2 && filters[arguments[2]] !== undefined) ? arguments[2] : 'they';
-    text = this.safeReplace(text, this.patterns.possessiveDeterminer, this.filters[filter].possessiveDeterminer);
-
-    // finish
-    callback(undefined, text);
+  neutralizePossessiveDeterminers(text, callback, filter) {
+    callback(undefined, this.safeReplace(
+      text,
+      this.patterns.possessiveDeterminer,
+      this.filters[filter].possessiveDeterminer,
+    ));
   },
 
   /**
@@ -201,15 +196,12 @@ var gender = module.exports = {
    * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizePossessivePronouns: function(text, callback){
-    var filter;
-
-    // terms
-    filter = (arguments > 2 && filters[arguments[2]] !== undefined) ? arguments[2] : 'they';
-    text = this.safeReplace(text, this.patterns.possessivePronoun, this.filters[filter].possessivePronoun);
-
-    // finish
-    callback(undefined, text);
+  neutralizePossessivePronouns(text, callback, filter = 'they') {
+    callback(undefined, this.safeReplace(
+      text,
+      this.patterns.possessivePronoun,
+      this.filters[filter].possessivePronoun,
+    ));
   },
 
   /**
@@ -221,15 +213,12 @@ var gender = module.exports = {
    * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizeReflexives: function(text, callback){
-    var filter;
-
-    // terms
-    filter = (arguments > 2 && filters[arguments[2]] !== undefined) ? arguments[2] : 'they';
-    text = this.safeReplace(text, this.patterns.reflexive, this.filters[filter].reflexive);
-
-    // finish
-    callback(undefined, text);
+  neutralizeReflexives(text, callback, filter = 'they') {
+    callback(undefined, this.safeReplace(
+      text,
+      this.patterns.reflexive,
+      this.filters[filter].reflexive,
+    ));
   },
 
   /**
@@ -239,18 +228,16 @@ var gender = module.exports = {
    * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralize: function(text, callback){
-    var delegate, filter;
-
-    delegate = this;
-    filter = (arguments > 2 && filters[arguments[2]] !== undefined) ? arguments[2] : 'they';
-
+  neutralize(text, callback, filter = 'they') {
     async.waterfall([
-      function(callback){ delegate.neutralizeNominativeSubjects(text, callback); },
-      function(text, callback){ delegate.neutralizeObliqueObjects(text, callback); },
-      function(text, callback){ delegate.neutralizePossessiveDeterminers(text, callback); },
-      function(text, callback){ delegate.neutralizePossessivePronouns(text, callback); },
-      function(text, callback){ delegate.neutralizeReflexives(text, callback); },
+      (callback) => { this.neutralizeNominativeSubjects(text, callback, filter); },
+      (text, callback) => { this.neutralizeObliqueObjects(text, callback, filter); },
+      (text, callback) => { this.neutralizePossessiveDeterminers(text, callback, filter); },
+      (text, callback) => { this.neutralizePossessivePronouns(text, callback, filter); },
+      (text, callback) => { this.neutralizeReflexives(text, callback, filter); },
     ], callback);
-  }
+  },
 };
+
+// export
+module.exports = gender;
