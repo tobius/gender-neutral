@@ -1,29 +1,33 @@
 {
   "name": "gender-neutral",
   "version": "0.1.0",
-  "description": "A node module that neutralizes gender specific text.",
+  "description": "Neutralize gender specificity inside a body of text",
   "main": "main.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "dep-check": "npx depcheck",
+    "dep-upgrade": "npx npm-check --update",
+    "lint": "npx eslint . --ext js",
     "test": "mocha -R spec"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/tobius/gender-neutral.git"
   },
-  "author": "Toby Miller <tobius.miller@gmail.com>",
+  "author": "Toby Miller <toby.miller@tobius.com>",
   "license": "MIT",
   "dependencies": {
-    "underscore": "*",
-    "request": "*",
-    "async": "*",
-    "natural": "*",
-    "WNdb": "*"
+    "async": "^3.2.2"
   },
   "devDependencies": {
-    "chai": "*",
-    "mocha": "^2.3.3"
+    "chai": "^4.3.4",
+    "depcheck": "^1.4.2",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "mocha": "^9.1.3",
+    "npm-check": "^5.9.2"
   }
 }
