@@ -132,10 +132,9 @@ const gender = {
    * example: He/She laughed
    *
    * @param {String} text
-   * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizeNominativeSubjects(text, callback, filter = 'they') {
+  neutralizeNominativeSubjects(text, filter = 'they') {
     let neutralText = this.safeReplace(
       text,
       this.patterns.nominativeSubject,
@@ -150,7 +149,7 @@ const gender = {
     neutralText = this.safeReplace(neutralText, present, '$1 are');
 
     // finish
-    callback(undefined, neutralText);
+    return neutralText;
   },
 
   /**
@@ -159,15 +158,14 @@ const gender = {
    * example: I called him/her
    *
    * @param {String} text
-   * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizeObliqueObjects(text, callback, filter = 'they') {
-    callback(undefined, this.safeReplace(
+  neutralizeObliqueObjects(text, filter = 'they') {
+    return this.safeReplace(
       text,
       this.patterns.obliqueObject,
       this.filters[filter].obliqueObject,
-    ));
+    );
   },
 
   /**
@@ -176,15 +174,14 @@ const gender = {
    * example: His/Her eyes gleam
    *
    * @param {String} text
-   * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizePossessiveDeterminers(text, callback, filter) {
-    callback(undefined, this.safeReplace(
+  neutralizePossessiveDeterminers(text, filter) {
+    return this.safeReplace(
       text,
       this.patterns.possessiveDeterminer,
       this.filters[filter].possessiveDeterminer,
-    ));
+    );
   },
 
   /**
@@ -193,15 +190,14 @@ const gender = {
    * example: That is his/hers
    *
    * @param {String} text
-   * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizePossessivePronouns(text, callback, filter = 'they') {
-    callback(undefined, this.safeReplace(
+  neutralizePossessivePronouns(text, filter = 'they') {
+    return this.safeReplace(
       text,
       this.patterns.possessivePronoun,
       this.filters[filter].possessivePronoun,
-    ));
+    );
   },
 
   /**
@@ -210,32 +206,30 @@ const gender = {
    * example: He/She likes himself/herself
    *
    * @param {String} text
-   * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralizeReflexives(text, callback, filter = 'they') {
-    callback(undefined, this.safeReplace(
+  neutralizeReflexives(text, filter = 'they') {
+    return this.safeReplace(
       text,
       this.patterns.reflexive,
       this.filters[filter].reflexive,
-    ));
+    );
   },
 
   /**
    * neutralize gender specific pronouns
    *
    * @param {String} text
-   * @param {Function} callback({String} err, {String} text)
    * @param {String} [filter=they] (they|e|ey|tho|hu|per|thon|jee|ve|xe|ze|zhe)
    */
-  neutralize(text, callback, filter = 'they') {
-    async.waterfall([
-      (callback) => { this.neutralizeNominativeSubjects(text, callback, filter); },
-      (text, callback) => { this.neutralizeObliqueObjects(text, callback, filter); },
-      (text, callback) => { this.neutralizePossessiveDeterminers(text, callback, filter); },
-      (text, callback) => { this.neutralizePossessivePronouns(text, callback, filter); },
-      (text, callback) => { this.neutralizeReflexives(text, callback, filter); },
-    ], callback);
+  neutralize(text, filter = 'they') {
+    let neutralizedText;
+    neutralizedText = this.neutralizeNominativeSubjects(text, filter);
+    neutralizedText = this.neutralizeObliqueObjects(text, filter);
+    neutralizedText = this.neutralizePossessiveDeterminers(text, filter);
+    neutralizedText = this.neutralizePossessivePronouns(text, filter);
+    neutralizedText = this.neutralizeReflexives(text, filter);
+    return neutralizedText;
   },
 };
 
