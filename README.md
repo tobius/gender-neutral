@@ -1,12 +1,12 @@
-
 # gender-neutral
 
-A node module that neutralizes gender specific text.
+Neutralize gender specificity inside a body of text
 
 ## Install
 
 ```shell
-[~] npm install git://github.com/tobius/gender-neutral.git
+[~/myapp] nvm i 12
+[~/myapp] npm i gender-neutral
 ```
 
 ## Usage
